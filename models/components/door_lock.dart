@@ -1,7 +1,6 @@
+import 'package:animated_tesla_car/constanins.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../constanins.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DoorLock extends StatelessWidget {
   const DoorLock({
@@ -31,7 +30,7 @@ class DoorLock extends StatelessWidget {
               )
             : SvgPicture.asset(
                 "assets/icons/door_unlock.svg",
-                key: const ValueKey("unlock"),
+                key: const ValueKey("lock"),
               ),
       ),
     );
