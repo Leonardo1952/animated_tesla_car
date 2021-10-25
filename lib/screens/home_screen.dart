@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'components/door_lock.dart';
+import 'components/tesla_bottom_navigationbar.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -16,6 +17,10 @@ class HomeScreen extends StatelessWidget {
         animation: _controller,
         builder: (context, _) {
           return Scaffold(
+            bottomNavigationBar: TeslaBottomNavigationBar(
+              onTap: (index) {},
+              selectedTab: 0,
+            ),
             body: SafeArea(
               child: LayoutBuilder(builder: (context, constrains) {
                 return Stack(
@@ -29,11 +34,36 @@ class HomeScreen extends StatelessWidget {
                         width: double.infinity,
                       ),
                     ),
+                    //Right
                     Positioned(
                       right: constrains.maxWidth * 0.05,
                       child: DoorLock(
                         isLock: _controller.isRightDoorLock,
                         press: _controller.updateRightDoorLock,
+                      ),
+                    ),
+                    //Left
+                    Positioned(
+                      left: constrains.maxWidth * 0.05,
+                      child: DoorLock(
+                        isLock: _controller.isLeftDoorLock,
+                        press: _controller.updateLeftDoorLock,
+                      ),
+                    ),
+                    //Top
+                    Positioned(
+                      top: constrains.maxHeight * 0.13,
+                      child: DoorLock(
+                        isLock: _controller.isBonnetLock,
+                        press: _controller.updateBonnetDoorLock,
+                      ),
+                    ),
+                    //Bottom
+                    Positioned(
+                      bottom: constrains.maxHeight * 0.17,
+                      child: DoorLock(
+                        isLock: _controller.isTrunkLock,
+                        press: _controller.updateTrunkDoorLock,
                       ),
                     ),
                   ],
