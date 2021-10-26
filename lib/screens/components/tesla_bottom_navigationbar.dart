@@ -36,7 +36,7 @@ class TeslaBottomNavigationBar extends StatelessWidget {
 
 List<String> navIconSrc = [
   "assets/icons/Lock.svg",
-  "assets/icons/Change.svg",
+  "assets/icons/Charge.svg",
   "assets/icons/Temp.svg",
   "assets/icons/Tyre.svg"
 ];
